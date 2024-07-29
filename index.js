@@ -94,7 +94,7 @@ function createMovieList(data) {
 		let _item = data[i];
 		_html += `<div class="main-item" data-popularity="${_item.popularity}">
 			<a class="item-img-container" href="javascript:void(0)">
-				<img src="${_imgBaseUrl + _item.poster_path}" alt="" class="item-img">
+				<img src="${_imgBaseUrl + _item.poster_path}" alt="${_item.title}" class="item-img">
 			</a>
 			<div class="item-content">
 				<div class="item-title">${_item.title}</div>
