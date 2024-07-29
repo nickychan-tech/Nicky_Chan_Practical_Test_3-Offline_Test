@@ -127,24 +127,10 @@ function getMovieList() {
 	})
 	.catch(err => {
 		console.error(err);
+		alert(err);
 		hideLoading();
 	});
 }
-
-// adult: false
-// backdrop_path: "/tncbMvfV0V07UZozXdBEq4Wu9HH.jpg"
-// genre_ids: (4) [28, 80, 53, 35]
-// id: 573435
-// original_language: "en"
-// original_title: "Bad Boys: Ride or Die"
-// overview: "After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves."
-// popularity: 9457.863
-// poster_path: "/nP6RliHjxsz4irTKsxe8FRhKZYl.jpg"
-// release_date: "2024-06-05"
-// title: "Bad Boys: Ride or Die"
-// video: false
-// vote_average: 7.647
-// vote_count: 1079
 
 // Loading
 function showLoading() {
