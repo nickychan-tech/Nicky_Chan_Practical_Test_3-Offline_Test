@@ -413,7 +413,7 @@ header .btn-open-main_menu span:nth-child(3) {
 	}
 }
 
-@media (max-width: 390px) {
+@media (max-width: 393px) {
 	body {
 		font-size: 14px;
 		line-height: 1.15em;
@@ -466,13 +466,13 @@ header .btn-open-main_menu span:nth-child(3) {
 	}
 
 	.main-content .main-list {
-		margin: 32px -10px 0;
+		margin: 32px -8px 0;
 	}
 	.main-content .main-list .main-item {
 		width: 50%;
-		padding: 0 10px 20px;
+		padding: 0 8px 20px;
 	}
-	.main-content .main-list .main-item .item-img {
+	.main-content .main-list .main-item .item-img-container {
 		border-radius: 12px;
 	}
 	.main-content .main-list .main-item .item-content {
