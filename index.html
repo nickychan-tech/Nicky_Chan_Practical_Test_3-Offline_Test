@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Practical Test 3 - Offline Test</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="index.css">
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="index.js"></script>
+</head>
+<body>
+<div class="loading"></div>
+
+<div class="top-wrapper">
+	<header class="content-inner">
+		<div class="header-content container">
+			<div class="logo">
+				<img src="./images/logo.png" alt="Logo" class="logo-img">
+			</div>
+			<div class="header-right">
+				<div class="nav-wrapper">
+					<div class="nav-container">
+						<div class="close-main_menu-btn">
+							<a href="#" class="btn-close-main_menu"></a>
+						</div>
+						<nav>
+							<div class="nav-item active">
+								<a href="javascript:void(0)" class="nav-btn">Home</a>
+							</div>
+							<div class="nav-item">
+								<a href="javascript:void(0)" class="nav-btn">Features</a>
+							</div>
+							<div class="nav-item">
+								<a href="javascript:void(0)" class="nav-btn">Download</a>
+							</div>
+							<div class="nav-item">
+								<a href="javascript:void(0)" class="nav-btn">Live TV</a>
+							</div>
+						</nav>
+					</div>
+				</div>
+				<div class="open-main_menu-btn">
+					<a href="#" class="btn-open-main_menu"><span></span><span></span><span></span></a>
+				</div>
+				<div class="header-search">
+					<a href="javascript:void(0)" class="btn-header-search"></a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="content-inner">
+		<div class="top-container container">
+			<div class="top-content">
+				<h1 class="heading">
+					<span class="main-color">Unleash the Magic,</span><br>
+					Cinema and Storytelling.
+				</h1>
+				<div class="intro">
+					Discover, stream, and experience the best in film<br>
+					from classics to latest blockbusters.
+				</div>
+				<a href="javascript:void(0)" class="btn-watch-now btn">Watch Now</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="main-content content-inner">
+	<div class="main-bar container">
+		<h2 class="title">
+			<b>FEATURED</b> <span class="main-color">TODAY</span>
+		</h2>
+		<div class="sorting">
+			<a href="#" class="btn-sort">
+				<span class="txt">Sort by popularity</span>
+			</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="main-list">
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	homeInit();
+});
+</script>
+</body>
+</html>
