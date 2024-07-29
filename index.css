@@ -310,6 +310,7 @@ header .btn-open-main_menu span:nth-child(3) {
 	padding: 0 20px 40px;
 }
 .main-content .main-list .main-item .item-img-container {
+	display: block;
 	border-radius: 20px;
 	overflow: hidden;
 }
