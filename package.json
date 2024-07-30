@@ -1,0 +1,27 @@
+{
+  "name": "practical-test-3-main",
+  "version": "1.0.0",
+  "description": "Website link:\r https://nickychan-inscoder.netlify.app/",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickychan-tech/Nicky_Chan_Practical_Test_3-Offline_Test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickychan-tech/Nicky_Chan_Practical_Test_3-Offline_Test/issues"
+  },
+  "homepage": "https://github.com/nickychan-tech/Nicky_Chan_Practical_Test_3-Offline_Test#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

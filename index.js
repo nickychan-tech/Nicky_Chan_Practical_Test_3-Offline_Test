@@ -23,23 +23,15 @@ function bindHomeEvent() {
 		e.preventDefault();
 		$(this).toggleClass('by-popularity');
 
+		let _resultsCopy = [...results];
 		if($(this).hasClass('by-popularity')) {
-			let _resultsCopy = [...results];
-			_resultsCopy.sort((a, b) => {
-				if(a.popularity < b.popularity) {
-					return 1;
-				}
-				if(a.popularity > b.popularity) {
-					return -1;
-				}
-				return 0;
-			});
-			createMovieList(_resultsCopy)
+			_resultsCopy.sort(sortByPopularity());
 
 		} else {
-			createMovieList(results)
+			_resultsCopy.sort(sortByDate());
 
 		}
+		createMovieList(_resultsCopy)
 	});
 
 	// Header menu
@@ -74,6 +66,28 @@ function bindHomeEvent() {
 	});
 }
 
+// Sorting
+function sortByPopularity() {
+	return (a, b) => {
+		if(a.popularity < b.popularity) {
+			return 1;
+		} else if(a.popularity > b.popularity) {
+			return -1;
+		}
+		return 0;
+	}
+}
+function sortByDate() {
+	return (a, b) => {
+		if(new Date(a.release_date) < new Date(b.release_date)) {
+			return 1;
+		} else if(new Date(a.release_date) > new Date(b.release_date)) {
+			return -1;
+		}
+		return 0;
+	}
+}
+
 // Main Menu
 function openMainMenu() {
 	mainMenuAnimCount = mainMenuAnimLen;
@@ -87,12 +101,13 @@ function closeMainMenu() {
 	}
 }
 
+// Create movie list
 function createMovieList(data) {
 	let _imgBaseUrl = 'https://image.tmdb.org/t/p/w400/';
 	let _html = '';
 	for(let i=0; i<data.length; i++) {
 		let _item = data[i];
-		_html += `<div class="main-item" data-popularity="${_item.popularity}">
+		_html += `<div class="main-item" data-date="${_item.release_date}" data-popularity="${_item.popularity}">
 			<a class="item-img-container" href="javascript:void(0)">
 				<img src="${_imgBaseUrl + _item.poster_path}" alt="${_item.title}" class="item-img">
 			</a>
@@ -122,7 +137,9 @@ function getMovieList() {
 	.then(response => response.json())
 	.then(response => {
 		results = response.results;
-		createMovieList(results);
+		let _resultsCopy = [...results];
+		_resultsCopy.sort(sortByDate());
+		createMovieList(_resultsCopy)
 		hideLoading();
 	})
 	.catch(err => {
@@ -161,3 +178,6 @@ function formatMoney(number, decPlaces, decSep, thouSep) {
         i.substr(j).replace(/(\decSep{3})(?=\decSep)/g, "$1" + thouSep) +
         (decPlaces ? decSep + Math.abs(number - i).toFixed(decPlaces).slice(2) : "");
 }
+
+// For unit test
+// module.exports = {sortByPopularity, sortByDate};
